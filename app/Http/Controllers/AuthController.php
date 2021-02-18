@@ -7,6 +7,7 @@ use Validator,Redirect,Response;
 Use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Session;
 
 class AuthController extends Controller
@@ -74,5 +75,10 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
         return Redirect('login');
+    }
+
+    public function information() {
+      $data = DB::table('users')->get();
+      return view ('user', ['data' =>$data]);
     }
 }
