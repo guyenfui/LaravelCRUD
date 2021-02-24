@@ -92,8 +92,12 @@ class AuthController extends Controller
       print_r($req->input());
       $user= new Users;
       $user->name= $req->name;
-      $user->owner= $req->owner;
-      $user->species= $req->species;
+      $user->email= $req->email;
+      $user->phone= $req->phone;
+      $user->address= $req->address;
+      $user->type= $req->type;
+      $user->gender= $req->gender;
+      $user->message= $req->message;
       echo $user->save();
       // return view ('user', ['data' =>$data]);
 
@@ -103,7 +107,7 @@ class AuthController extends Controller
 
     public function showData()
     {
-      $data = DB::table('pet')->paginate(5);
+      $data = DB::table('contacts')->paginate(5);
       return view ('showData', ['data' =>$data]);
         // return view('showData');
     } 

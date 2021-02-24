@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Users extends Model
 {
     // add information
-    protected $table ='pet';
+    protected $table ='contacts';
     public $timestamp = false;
 }

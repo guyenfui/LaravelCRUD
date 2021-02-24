@@ -17,11 +17,11 @@
 @foreach($data as $item)
 <tr>
 <td>{{$item -> name}}</td>
-<td>{{$item -> owner}}</td>
-<td>{{$item -> species}}</td>
-<td>{{$item -> sex}}</td>
-<td>{{$item -> birth}}</td>
-<td>{{$item -> death}}</td>
+<td>{{$item -> email}}</td>
+<td>{{$item -> phone}}</td>
+<td>{{$item -> address}}</td>
+<td>{{$item -> type}}</td>
+<td>{{$item -> gender}}</td>
 <td>{{$item -> updated_at}}</td>
 <td>{{$item -> created_at}}</td>
 </tr>

@@ -3,11 +3,19 @@
   <form action="submit" method="POST">
   @csrf
   <br><br>
-  <input type="text" name="name" placeholder="Name User">
+  <input type="text" name="name" placeholder="Name">
   <br><br>
-  <input type="text" name="owner" placeholder="owner">
+  <input type="text" name="email" placeholder="email">
   <br><br>
-  <input type="text" name="species" placeholder="species">
+  <input type="text" name="phone" placeholder="phone">
+  <br><br>
+  <input type="text" name="address" placeholder="address">
+  <br><br>
+  <input type="text" name="type" placeholder="type">
+  <br><br>
+  <input type="text" name="gender" placeholder="gender">
+  <br><br>
+  <input type="text" name="message" placeholder="message">
   <br><br>
   <button type="submit">Submit Data</button>
   </form>
