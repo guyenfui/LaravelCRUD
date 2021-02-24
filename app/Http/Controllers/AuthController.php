@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
 Use App\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Session;
+// for add form]
+use App\Users;
 
 class AuthController extends Controller
 {
@@ -57,7 +60,9 @@ class AuthController extends Controller
     {
 
       if(Auth::check()){
-        return view('dashboard');
+        $data = DB::table('users')->get();
+      return view ('dashboard', ['data' =>$data]);
+        // return view('dashboard');
       }
        return Redirect::to("login")->withSuccess('Opps! You do not have access');
     }
@@ -81,4 +86,25 @@ class AuthController extends Controller
       $data = DB::table('users')->get();
       return view ('user', ['data' =>$data]);
     }
+
+    public function save(Request $req)
+    {
+      print_r($req->input());
+      $user= new Users;
+      $user->name= $req->name;
+      $user->owner= $req->owner;
+      $user->species= $req->species;
+      echo $user->save();
+      // return view ('user', ['data' =>$data]);
+
+      $data = DB::table('users')->get();
+      // return view ('dashboard', ['data' =>$data]);
+    }
+
+    public function showData()
+    {
+      $data = DB::table('pet')->paginate(5);
+      return view ('showData', ['data' =>$data]);
+        // return view('showData');
+    } 
 }

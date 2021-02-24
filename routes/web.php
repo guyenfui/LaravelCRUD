@@ -25,3 +25,10 @@ Route::get('dashboard', 'AuthController@dashboard');
 Route::get('logout', 'AuthController@logout');
 //information form
 Route::get('information','AuthController@information');
+//add information form
+Route::view('form','userview');
+//button save in form information 
+Route::post('submit','AuthController@save');
+//show data
+// Route::view('showData','showData');
+Route::get('showData','AuthController@showData');
