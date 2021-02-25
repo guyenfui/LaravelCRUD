@@ -20,5 +20,6 @@
   <button type="submit">Submit Data</button>
   </form>
   <div class="text-center"> <a href="{{url('showData')}}">Show data</a>.</div>
+  
 </body>
 </html>

@@ -32,3 +32,8 @@ Route::post('submit','AuthController@save');
 //show data
 // Route::view('showData','showData');
 Route::get('showData','AuthController@showData');
+//add data
+Route::view('addData','addData');
+Route::post('update','AuthController@update');
+//delete data
+Route::post('delete','AuthController@delete');

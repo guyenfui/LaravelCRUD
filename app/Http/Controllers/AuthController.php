@@ -111,4 +111,26 @@ class AuthController extends Controller
       return view ('showData', ['data' =>$data]);
         // return view('showData');
     } 
+
+    //add Data
+    public function update(Request $req)
+    {
+      // $users = Company::find($req->id);
+      // $users->name=$req->name;
+      // $users->address=$req->address;
+      // $cusers->save();
+
+      echo Users::where('name',$req->name)
+      ->update(['address'=>$req->address]);
+      // print_r($req->input(''));
+    }
+
+    //delete
+    public function delete(Request $req)
+    {
+      // $user=Users::find($req->name);
+      // echo $user->delete();
+      // print_r($req->input(''));
+      Users::destroy(['$req->name']);
+    }
 }

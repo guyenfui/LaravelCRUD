@@ -25,9 +25,12 @@
 <td>{{$item -> updated_at}}</td>
 <td>{{$item -> created_at}}</td>
 </tr>
+
 <br></br>
 
 @endforeach
+
+<div class="text-center"> <a href="{{url('addData')}}">Edit data</a>.</div>
 
 </body>
 </html>
